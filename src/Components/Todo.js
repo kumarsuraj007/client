@@ -25,7 +25,7 @@ const Todo = () => {
     if (Data.length > 0) {
       SetData("");
       const Response = await axios({
-        url: "http://localhost:5000/save-content",
+        url: "https://mytodoby.herokuapp.com/save-content",
         // url: 'https://mysterious-island-16718.herokuapp.com/save-content',
         method: "POST",
         data: { content: Data },
@@ -41,7 +41,7 @@ const Todo = () => {
   // Function To Remove Todo
   const RemoveTodo = async (_id) => {
     const Response = await axios({
-      url: `http://localhost:5000/delete-content/${_id}`,
+      url: `https://mytodoby.herokuapp.com/delete-content/${_id}`,
       method: "DELETE",
       data: { content: Data },
       headers: {
@@ -59,7 +59,7 @@ const Todo = () => {
   // To Remove All Todos
   const RemoveAll = async (e) => {
     const Response = await axios({
-      url: "http://localhost:5000/deleteAll-content",
+      url: "https://mytodoby.herokuapp.com/deleteAll-content",
       method: "DELETE",
     });
     console.log({ Response });
